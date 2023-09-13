@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPS</title>
+    <link rel="stylesheet" href="RPS.css">
+  </head>
+  <body>
+    <p class="heading">Rock Paper Scissors </p>
+
+    <button onclick="getResult('rock')"
+    "><img src="Emojis/rock-emoji-removebg-preview.png" class="move-icon"></button>
+
+    <button onclick="getResult('paper')"><img src="Emojis/paper-emoji-removebg-preview.png"  class="move-icon"></button>
+
+    <button onclick="getResult('scissors')"><img src="Emojis/scissors-emoji-removebg-preview.png" class="move-icon" ></button>
+    
+    <p class="js-score"></p>
+    <p class="js-moves"></p>
+    <p class="js-result">aklsdjfl</p>
+    
+
+    
+   <button onclick="
+    score = {
+      win: 0, 
+      loss: 0,
+      tie: 0,
+    };
+    localStorage.removeItem('score');
+    updateScoreElements();
+   " class="resetScoreButton">Clear score</button>
+
+
+    <script src="RPS.js"></script>
+  
+  </body>
+
+</html>
