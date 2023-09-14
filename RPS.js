@@ -1,5 +1,6 @@
     
       let computerMove = '';
+      let playerMove = '';
       let result = '';
       let score = JSON.parse(localStorage.getItem('score')) || {
         win: 0, 
@@ -64,7 +65,7 @@
       }
 
       function getComputerMove(){
-        const randomNumber = Math.random();
+        const randomNumber = Math.random(); //Generates a number between 0 & 1
 
         if(randomNumber>=0 && randomNumber<1/3){
           computerMove = 'rock';
@@ -75,4 +76,23 @@
         }
         return computerMove;
       }
+
+      function getPlayerMove(){
+        const randomNumber = Math.random();
+
+        if(randomNumber>=0 && randomNumber<1/3){
+          playerMoveMove = 'rock';
+        } else if(randomNumber>=1/3 && randomNumber<2/3){
+          playerMove = 'paper'
+        } else if(randomNumber>=2/3 && randomNumber<1){
+          playerMove = 'scissors';
+        }
+        return playerMove
+      }
+
+      function autoPlay(){
+        let movebyPlayer = getPlayerMove();
+        setInterval((getResult(movebyPlayer)), 5000);
+      }
+
       console.log(getComputerMove())
