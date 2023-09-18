@@ -90,9 +90,24 @@
         return playerMove
       }
 
+      let isAutoPlaying = false;
+
+
+     
+
       function autoPlay(){
-        let movebyPlayer = getPlayerMove();
-        setInterval((getResult(movebyPlayer)), 5000);
+        let intervalID = '';
+        if(!isAutoPlaying){
+          intervalID = setInterval(function(){
+            let playerMove = getPlayerMove();
+            getResult(playerMove)
+          }, 2000);
+          isAutoPlaying = true;
+        }
+        else{
+          clearInterval(intervalID);
+        }
+        
       }
 
       console.log(getComputerMove())

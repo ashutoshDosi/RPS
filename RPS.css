@@ -44,7 +44,8 @@ button{
   margin-top: 50px;
 }
 
-.resetScoreButton{
+.resetScoreButton,
+.autoPlayButton {
   background-color: white;
   border: none;
   color: black;
